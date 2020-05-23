@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "shadow-cljs": "2.8.94"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build" : "shadow-cljs release :lambda --debug",
+    "predeploy": "npm run build",
+    "deploy": "cd dist/lambda && zip lambda.zip index.js && aws --profile lambda lambda update-function-code --function-name polyjam --zip-file fileb://lambda.zip "
+  }
+}

@@ -1,0 +1,13 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ []
+
+ :builds
+ {:lambda {:target :node-library
+           :output-to "./dist/lambda/index.js"
+           :exports {:handler lambda.main/handler}
+           :compiler-options {:infer-externs :auto}
+           }}}
