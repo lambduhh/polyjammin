@@ -1,5 +1,8 @@
 ;; shadow-cljs configuration
-{:source-paths
+{:deps
+true
+
+ :source-paths
  ["src"]
 
  :dependencies
@@ -9,5 +12,8 @@
  {:lambda {:target :node-library
            :output-to "./dist/lambda/index.js"
            :exports {:handler lambda.main/handler}
-           :compiler-options {:infer-externs :auto}
-           }}}
+           :compiler-options {:infer-externs :auto}}
+ #_ :devtools
+ #_ {:http-port 2000
+   :http-root "resources/public/js"
+   :preloads [shadow.remote.runtime.cljs.browser]}}}

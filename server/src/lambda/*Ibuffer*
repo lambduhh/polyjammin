@@ -1,0 +1,16 @@
+ MRL Name                    Size Mode             Filename/Process
+ --- ----                    ---- ----             ----------------
+[ Default ]
+     main.cljs                307 ClojureScript    ~/Projects/polyjammin/server/src/lambda/main.cljs
+  %  lambda                   334 Dired by name    ~/Projects/polyjammin/server/src/lambda/
+ *   credentials               25 Fundamental      ~/Projects/polyjammin/server/src/lambda/credentials
+     shadow-cljs.edn          392 Clojure          ~/Projects/polyjammin/server/shadow-cljs.edn
+  %  server                   787 Dired by name    ~/Projects/polyjammin/server/
+  %  src                      376 Dired by name    ~/Projects/polyjammin/server/src/
+     deps.edn                 929 Clojure          ~/Projects/polyjammin/server/deps.edn
+     *scratch*                145 Lisp Interaction 
+ *%  *Messages*              4290 Messages         
+ *   *helm-mode-dired*        199 Hmm              
+ *   *helm M-x*              2139 Hmm              
+
+     11 buffers              9923                  7 files, no processes
