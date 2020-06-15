@@ -1,10 +1,12 @@
-import logging
 import boto3
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
 
-# set up logging
-logger = logging.getLogger('PySpotify')
+client_id = os.environ['client_id']
+secret_client_id = os.environ['secret_client_id']
+aws_access_key = os.environ['aws_access_key']
+aws_secret_key = os.environ['aws_secret_key']
+bucket = 'spotify-data-polyjam'
 
 
 def set_access_boto_session():
@@ -26,4 +28,3 @@ def create_key(connect, bucket, token: str):
 
 def token_string(token: dict) -> str:
     return token.get('access_token')
-
