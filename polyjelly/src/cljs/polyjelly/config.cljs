@@ -7,7 +7,7 @@
 scope=user-read-private%20user-top-read%20user-library-read&response_type=token&state=123
 "))
 
-(def spotify-base-URL "https://api.spotify.com/v1")
+(def spotify-base-URL "https://api.spotify.com/v1/")
 
 (def debug?
   ^boolean goog.DEBUG)

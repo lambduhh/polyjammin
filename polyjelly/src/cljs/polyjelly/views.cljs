@@ -1,14 +1,14 @@
 (ns polyjelly.views
   (:require
-   [re-frame.core :as re-frame]
+   [re-frame.core :as rf]
    [re-com.core :as re-com]
    [polyjelly.subs :as subs]
    [polyjelly.db :as db]
-   [polyjelly.config :as config]
-   ))
+   [polyjelly.config :as config]))
 
 (defn title []
-  (let [name (re-frame/subscribe [::subs/name])]
+  (let [name
+        (rf/subscribe [::subs/name])]
     [re-com/title
      :label (str "Hello from " @name)
      :level :level1]))
@@ -17,13 +17,17 @@
   [:a {:href config/authlink}
    "authorize spotify"])
 
+
+
+
 (defn button []
   [re-com/button
-   :label "auth button"
-   :on-click ])
+   :label "get-user button"
+   :on-click #(rf/dispatch [:get-users-profile]) ])
 
 (defn main-panel []
   [:div
    [re-direct]
-   (when (:access-token @db/poly-db)
-     [:p (:access-token @db/poly-db)])])
+   [:<>
+    (when (:access-token @db/poly-db)
+      [button])]])
